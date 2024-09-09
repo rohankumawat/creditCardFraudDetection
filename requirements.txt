@@ -13,3 +13,4 @@ mlflow  # Optional, for model tracking
 prometheus-client  # For monitoring
 grafana-api  # For monitoring
 pytest  # For unit tests
+umap-learn  # For dimensionality reduction
