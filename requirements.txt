@@ -1,0 +1,15 @@
+# requirements.txt
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+tensorflow  # or pytorch
+dvc  # For data version control (optional)
+flask  # or streamlit for dashboard
+gunicorn  # For deployment
+docker  # Docker for containerization
+mlflow  # Optional, for model tracking
+prometheus-client  # For monitoring
+grafana-api  # For monitoring
+pytest  # For unit tests
