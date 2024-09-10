@@ -17,14 +17,13 @@ Features
  - [x] Clone the GitHub repository and set up the project locally.
  - [x] Set up the environment using virtualenv/conda and install dependencies (requirements.txt).
 2. Data Pipeline
- - [ ] Build the data ingestion pipeline (using Apache Airflow/Prefect).
- - [ ] Implement data validation and quality checks (using Great Expectations).
- - [ ] Set up DVC for versioning of datasets.
+ - [x] Build the data ingestion pipeline.
+ - [x] Set up DVC for versioning of datasets.
 3. Feature Engineering
  - [x] Preprocess the data (scaling, normalization, handling missing values).
  - [x] Engineer additional features (transaction amount, time-based features, etc.).
 4. Model Building
- - [ ] Implement Logistic Regression model.
+ - [x] Implement Logistic Regression model.
  - [ ] Implement Decision Tree model.
  - [ ] Explore Neural Network models.
  - [ ] Implement Clustering for unsupervised detection of anomalies.
@@ -32,7 +31,7 @@ Features
 5. MLOps Integration
  - [ ] Dockerize the models for consistent deployment.
  - [ ] Set up Jenkins for CI/CD pipeline to automate model training and deployment.
- - [ ] Use MLflow or DVC for model versioning and tracking.
+ - [x] Use MLflow or DVC for model versioning and tracking.
 6. Model Monitoring
  - [ ] Set up Prometheus to monitor model performance.
  - [ ] Visualize monitoring results using Grafana.
