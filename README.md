@@ -14,15 +14,15 @@ Features
 ## TODOs
 
 1. Initial Setup
- - [ ] Clone the GitHub repository and set up the project locally.
- - [ ] Set up the environment using virtualenv/conda and install dependencies (requirements.txt).
+ - [x] Clone the GitHub repository and set up the project locally.
+ - [x] Set up the environment using virtualenv/conda and install dependencies (requirements.txt).
 2. Data Pipeline
  - [ ] Build the data ingestion pipeline (using Apache Airflow/Prefect).
  - [ ] Implement data validation and quality checks (using Great Expectations).
  - [ ] Set up DVC for versioning of datasets.
 3. Feature Engineering
- - [ ] Preprocess the data (scaling, normalization, handling missing values).
- - [ ] Engineer additional features (transaction amount, time-based features, etc.).
+ - [x] Preprocess the data (scaling, normalization, handling missing values).
+ - [x] Engineer additional features (transaction amount, time-based features, etc.).
 4. Model Building
  - [ ] Implement Logistic Regression model.
  - [ ] Implement Decision Tree model.

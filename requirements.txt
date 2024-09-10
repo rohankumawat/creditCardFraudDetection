@@ -4,6 +4,8 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+xgboost
+imbalanced-learn
 tensorflow  # or pytorch
 dvc  # For data version control (optional)
 flask  # or streamlit for dashboard
