@@ -163,6 +163,7 @@ cython_debug/
 
 # Ignore preprocessed data
 data/processed/
+data/processed/creditcard_preprocessed.csv
 
 # Ignore MLflow runs and artifacts
 mlruns/
