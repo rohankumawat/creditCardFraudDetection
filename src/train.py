@@ -15,7 +15,7 @@ from data_ingestion import load_and_preprocess
 # Dictionary of models to train
 models = {
     "LogisticRegression": LogisticRegression(),
-    "RandomForest": RandomForestClassifier(n_estimators=100, random_state=42),
+    "RandomForest": RandomForestClassifier(n_estimators=50, random_state=42),
     "XGBoost": XGBClassifier(use_label_encoder=False, eval_metric='mlogloss', random_state=42),
     # Add more models here if needed
 }
