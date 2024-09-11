@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import joblib
 
 def load_data(file_path):
     """
@@ -11,7 +12,7 @@ def load_data(file_path):
     print(f"Data loaded successfully from {file_path}")
     return data
 
-def preprocess_data(data):
+def preprocess_data(data, scaler_path='models/scaler.pkl'):
     """
     Preprocess the data by scaling 'Amount' and 'Time' features.
     :param data: Raw Pandas DataFrame
@@ -29,6 +30,10 @@ def preprocess_data(data):
     
     # Drop the original 'Amount' and 'Time' columns
     data = data.drop(['Amount', 'Time'], axis=1)
+    
+    # Save the scaler to a .pkl file
+    joblib.dump(scaler, scaler_path)
+    print(f"Scaler saved to {scaler_path}")
     
     print("Data preprocessing completed: 'Amount' and 'Time' features scaled.")
     
