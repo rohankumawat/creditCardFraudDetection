@@ -9,6 +9,7 @@ imbalanced-learn
 openai
 langchain
 langchain-openai
+python-dotenv
 tensorflow  # or pytorch
 dvc  # For data version control (optional)
 flask  # or streamlit for dashboard

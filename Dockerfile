@@ -1,6 +1,13 @@
 # Use an official Python runtime as the base image
 FROM python:3.9-slim
 
+# Install system dependencies for h5py and other Python packages
+RUN apt-get update && apt-get install -y \
+    libhdf5-dev \
+    pkg-config \
+    build-essential \
+    && apt-get clean
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -17,4 +24,4 @@ COPY . .
 EXPOSE 5000
 
 # Run the model training script or any other starting point
-CMD ["python", "src/train.py"]
+CMD ["python", "app.py"]
