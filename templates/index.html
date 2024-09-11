@@ -10,16 +10,19 @@
     <form action="/predict" method="POST">
         <label for="features">Enter Transaction Features (comma-separated):</label><br>
         <input type="text" id="features" name="features" required><br><br>
-        
+
         <label for="time">Enter Transaction Time:</label><br>
         <input type="text" id="time" name="time" required><br><br>
-    
+
         <label for="amount">Enter Transaction Amount:</label><br>
         <input type="text" id="amount" name="amount" required><br><br>
-    
+
         <button type="submit">Predict</button>
     </form>
 
-    <h2>{{ prediction_text }}</h2>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        <h3>{{ explanation_text }}</h3>
+    {% endif %}
 </body>
 </html>
