@@ -1,8 +1,11 @@
-# Use an official Python runtime as the base image
-FROM python:3.9-slim
+# Use an official Python 3.12 runtime as the base image
+FROM python:3.12-slim
 
 # Install system dependencies for h5py and other Python packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update || true \
+    && apt-get install -y apt-transport-https ca-certificates \
+    && apt-get update \
+    && apt-get install -y \
     libhdf5-dev \
     pkg-config \
     build-essential \
@@ -14,14 +17,14 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
+# Install the necessary dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
 COPY . .
 
-# Expose port (if you're running a web service or dashboard, adjust as needed)
-EXPOSE 5000
+# Expose port 8080 (required by Google Cloud Run)
+EXPOSE 8080
 
-# Run the model training script or any other starting point
+# Command to run the Flask app
 CMD ["python", "app.py"]

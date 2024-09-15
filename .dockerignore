@@ -1,0 +1,13 @@
+# Ignore virtual environments
+venv
+__pycache__
+
+# Ignore data, models, and logs
+logs
+mlruns
+
+# Ignore notebooks (since they are not needed in production)
+notebooks
+
+# Ignore DVC files if not needed in production
+.dvc
