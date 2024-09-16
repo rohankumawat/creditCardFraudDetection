@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Card Fraud Detection</title>
+    <title>Fraud Detection App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Credit Card Fraud Detection</h1>
-    <form action="/predict" method="POST">
-        <label for="features">Enter Transaction Features (comma-separated):</label><br>
-        <input type="text" id="features" name="features" required><br><br>
+    <div class="container">
+        <h1>Fraud Detection Dashboard</h1>
 
-        <label for="time">Enter Transaction Time:</label><br>
-        <input type="text" id="time" name="time" required><br><br>
+        <!-- Form for input -->
+        <form id="prediction-form" method="POST" action="/predict" class="form-container">
 
-        <label for="amount">Enter Transaction Amount:</label><br>
-        <input type="text" id="amount" name="amount" required><br><br>
+            <label for="features">Enter Features (comma-separated, except Time and Amount):</label>
+            <input type="text" name="features" id="features" placeholder="e.g., 0.1, 0.2, ..." class="input-field" required>
 
-        <button type="submit">Predict</button>
-    </form>
+            <label for="time">Transaction Time:</label>
+            <input type="number" name="time" id="time" class="input-field" required>
 
-    {% if prediction_text %}
-        <h2>{{ prediction_text }}</h2>
-        <h3>{{ explanation_text }}</h3>
-    {% endif %}
+            <label for="amount">Transaction Amount:</label>
+            <input type="number" name="amount" id="amount" class="input-field" required>
+
+            <label for="model">Select Model:</label>
+            <select name="model" id="model" class="input-field">
+                <option value="Logistic Regression">Logistic Regression</option>
+                <option value="Random Forest">Random Forest</option>
+                <option value="XGBoost">XGBoost</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Section to display the result -->
+        <div id="result" class="result-section">
+            <h2>{{ prediction_text }}</h2>
+            <p>{{ explanation_text }}</p>
+        </div>
+    </div>
+
 </body>
 </html>
